@@ -38,6 +38,20 @@ public class Produto {
 	@ManyToOne // Relacionamento de muitos para um.
 	@JsonIgnoreProperties("categoria") // impede o Looping infinito
 	private Categoria categoria;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Usuario usuario;
+	
+	
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 	public Long getId() {
 		return id;
